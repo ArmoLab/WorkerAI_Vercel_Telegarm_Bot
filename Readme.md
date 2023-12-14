@@ -1,5 +1,7 @@
 # Worker AI Bot
 
+Limits: [Check Here](https://developers.cloudflare.com/workers-ai/platform/limits/)
+
 An AI chat bot powered by the Cloudflare Worker AI and running on vercel.
 
 > did any one know how to use some telegram bot api node packages on Cloudflare Pages? Need that!
