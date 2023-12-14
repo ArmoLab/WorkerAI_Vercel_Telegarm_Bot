@@ -1,0 +1,17 @@
+{
+  "name": "worker-ai-telegram-bot",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "test": "node ./api/webhook.js",
+    "dev": "vercel cli",
+    "setup": "echo \"TODO\""
+  },
+  "keywords": [],
+  "author": "kobe-koto",
+  "license": "AGPL-3.0",
+  "dependencies": {
+    "node-telegram-bot-api": "^0.64.0"
+  }
+}
