@@ -1,4 +1,4 @@
-export default class Commands {
+export default class CommandClass {
     constructor (config) {
         for (let i in config) {
             this[i] = config[i];
