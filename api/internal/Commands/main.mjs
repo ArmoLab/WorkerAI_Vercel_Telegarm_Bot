@@ -57,9 +57,9 @@ export default class CommandClass {
                 headers: {
                     "Authorization": `Bearer ${process.env.CF_Auth}`
                 },
-                body: {
+                body: JSON.stringify({
                     "prompt": Text
-                }
+                })
             }
         ).then(res => res.json())
         await bot.sendMessage(id, AIResponse.result.response, { parse_mode: "Markdown" })
