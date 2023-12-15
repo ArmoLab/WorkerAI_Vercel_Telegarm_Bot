@@ -6,6 +6,10 @@ An AI chat bot powered by the Cloudflare Worker AI and running on vercel.
 
 > did any one know how to use some telegram bot api node packages on Cloudflare Pages? Need that!
 
+## Deploy to Vercel
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FArmoLab%2FWorkerAI_Vercel_Telegarm_Bot&env=TELEGRAM_TOKEN,CF_AccountID,CF_Auth,model,USER_ALLOWED,ADMIN)
+
 ## Environment Varibles
 
   1. `TELEGRAM_TOKEN` (Required): Your Telegram Bot Access Token.
