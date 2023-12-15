@@ -25,7 +25,7 @@ export default class CommandClass {
     async help (Text, id, bot) {
         await bot.sendMessage(
             id, 
-            `Use /ask <Prompt> to ask to AI (${model})\n` +
+            `Use /ask <Prompt> to ask to AI (${this.model})\n` +
             `Use /listConfig to check config (Admin only)`,
             { parse_mode: "Markdown" }
         )
@@ -51,7 +51,7 @@ export default class CommandClass {
             await bot.sendMessage(id, `OH, sorry, you're not in the allow list.`, { parse_mode: "Markdown" })
         }
         let AIResponse = await fetch(
-            `https://api.cloudflare.com/client/v4/accounts/${process.env.CF_AccountID}/ai/run/${model}`,
+            `https://api.cloudflare.com/client/v4/accounts/${process.env.CF_AccountID}/ai/run/${this.model}`,
             {
                 method: "POST",
                 headers: {
