@@ -1,11 +1,11 @@
 import TelegramBot from "node-telegram-bot-api";
-import Commands from "./internal/Commands/main.mjs"
+import CommandClass from "./internal/Commands/main.mjs"
 const config = {
     AllowList: process.env.USER_ALLOWED ? process.env.USER_ALLOWED.split(",") : false,
     Admins: (process.env.ADMIN || "").split(","),
     model: process.env.model || "@cf/meta/llama-2-7b-chat-int8"
 };
-console.log(new Commands(config))
+const Commands = new CommandClass(config);
 export default async (request, response) => {
     try {
         const bot = new TelegramBot(process.env.TELEGRAM_TOKEN);
