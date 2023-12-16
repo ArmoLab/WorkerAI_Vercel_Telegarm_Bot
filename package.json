@@ -5,13 +5,10 @@
   "type": "module",
   "scripts": {
     "test": "node ./api/webhook.js",
-    "dev": "vercel cli",
+    "dev:backend": "vercel dev --listen 22222",
     "setup": "echo \"TODO\""
   },
   "keywords": [],
   "author": "kobe-koto",
-  "license": "AGPL-3.0",
-  "dependencies": {
-    "node-telegram-bot-api": "^0.64.0"
-  }
+  "license": "AGPL-3.0"
 }

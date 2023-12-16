@@ -1,16 +1,19 @@
-import TelegramBot from "node-telegram-bot-api";
-import CommandClass from "./internal/Commands/main.mjs"
+import TelegramBot from "./internal/Telegram/main.js";
+import CommandClass from "./internal/Commands/main.js";
 const config = {
     AllowList: process.env.USER_ALLOWED ? process.env.USER_ALLOWED.split(",") : false,
     Admins: (process.env.ADMIN || "").split(","),
-    model: process.env.model || "@cf/meta/llama-2-7b-chat-int8"
+    model: process.env.model || "@cf/meta/llama-2-7b-chat-int8",
+    model_img: process.env.model_img || "@cf/stabilityai/stable-diffusion-xl-base-1.0"
 };
-const Commands = new CommandClass(config);
 export default async (request, response) => {
     try {
         const bot = new TelegramBot(process.env.TELEGRAM_TOKEN);
+        const Commands = new CommandClass(config, bot);
         // const username = process.env.TELEGRAM_BOT_USERNAME || `@${(await bot.getMe()).username}`;
         const { chat: { id }, text } = request.body.message;
+
+        console.log(`Msg: \`${text}\` from <${id}>`)
 
         if (id.toString().startsWith("-")) {
             await bot.sendMessage(id, `Only accept DM.`, { parse_mode: "Markdown" })
